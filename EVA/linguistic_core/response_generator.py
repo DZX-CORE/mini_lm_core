@@ -13,6 +13,7 @@ class ResponseGenerator:
     def generate(self):
         intent = self.plug.receive("intent")
         resposta = self.responses.get(intent, "Desculpe, não entendi sua intenção.")
+        self.plug.send("response", resposta)
         return resposta
 
 if __name__ == "__main__":

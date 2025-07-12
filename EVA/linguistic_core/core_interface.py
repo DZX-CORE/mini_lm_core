@@ -3,14 +3,7 @@ from EVA.linguistic_core.tokenizer import Tokenizer
 from EVA.linguistic_core.intent_analyzer import IntentAnalyzer
 from EVA.linguistic_core.response_generator import ResponseGenerator
 
-class UniversalPlugInterface:
-    def send(self, data):
-        raise NotImplementedError
-
-    def receive(self):
-        raise NotImplementedError
-
-class LinguisticCoreInterface(UniversalPlugInterface):
+class LinguisticCoreInterface:
     def __init__(self):
         self.plug = InternalPlug()
         self.tokenizer = Tokenizer(self.plug)
